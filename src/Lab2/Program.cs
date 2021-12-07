@@ -1,18 +1,36 @@
 ﻿using System;
 
-
 namespace ConsoleApp3
 {
     class Program
     {
         static void Main(string[] args)
         {
-            // Сложность O(n)
-            string stroka = Console.ReadLine();
-            for (int index = stroka.Length - 1; index >= 0; index--)
+            string str = InputData();
+
+            str = ReverseString(str);
+
+            OutputData(str);
+        }
+
+        static string ReverseString(string str)
+        {
+            string result = "";  
+            for (int index = str.Length - 1; index >= 0; index--)
             {
-                Console.Write(stroka[index]);
+                result += str[index];
             }
+            return result;
+        }
+
+        static void OutputData(string str)
+        {
+            Console.WriteLine(str);
+        }
+
+        static string InputData()
+        {
+            return Console.ReadLine();
         }
     }
 }
